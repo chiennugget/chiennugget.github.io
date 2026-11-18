@@ -1,0 +1,11 @@
+HTML tags used:
+<html>, <head>, <title>, <link>, <script>, <body>, <nav>, <div>, <a>, <button>, <span>, <ul>, <li>, <hr>, <form>, <input>, <img>, <h4>, <h5>, <p>, <iframe>
+
+CSS properties used:
+background-color, background-image, background-size, background-position, background-repeat, backdrop-filter, border, border-radius, box-shadow, color, content, display, flex, flex-direction, flex-shrink, flex-wrap, font-family, font-optical-sizing, font-size, font-style, font-weight, gap, height, inset, justify-content, align-items, margin, margin-top, margin-bottom, margin-left, margin-right, max-width, min-height, object-fit, overflow, padding, padding-left, padding-top, position, text-align, top, transform, transition, white-space, width, z-index
+
+JavaScript:
+I used JavaScript to make each project's "Try it" button load that project (such as my KQMS Team Calculator) into an embedded iframe page, using the button's data-frame attribute.
+
+Bootstrap:
+I used Bootstrap 5.3 for a responsive dark navbar with a dropdown menu, buttons (btn-light, btn-outline-light) and spacing/text utilities (mt-3, mt-4, text-center), and wrote my own CSS on top for the glass-style cards, hero section and background.

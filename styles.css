@@ -1,0 +1,294 @@
+/* ---------- Page background (works on iPhone too) ---------- */
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background-color: grey;
+    /* fallback if the image fails to load */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(50, 50, 50, 0.45), rgba(50, 50, 50, 0.45)),
+        url("https://images5.alphacoders.com/389/thumb-1920-389247.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ---------- Sticky navbar ---------- */
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    /* keeps it above your cards */
+}
+
+.navbar,
+.navbar-brand,
+.nav-link {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* ---------- Hero section ---------- */
+/* ---------- Hero ---------- */
+.hero-section {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 3rem 1.5rem;
+}
+
+.hero-name {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-bottom: 1.75rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ---------- Social icons ---------- */
+.social-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Featured projects ---------- */
+.featured-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.section-heading {
+    font-family: "Oswald", sans-serif;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.glass-card {
+    background-color: rgba(20, 20, 25, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 380px;
+    object-fit: cover;
+    flex: 1 1 300px;
+}
+
+.project-body {
+    flex: 1 1 300px;
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-family: "Oswald", sans-serif;
+}
+
+.project-text {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* ---------- Profile cards ---------- */
+.profile-card {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.profile-card-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-card-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+/* ---------- Iframe pages (calculator) ---------- */
+.page-frame {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 56px);
+    border: none;
+}
+
+/* ---------- About page ---------- */
+.about-section {
+    padding: 0 1rem;
+}
+
+.about-card {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.about-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.about-name {
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 0.25rem;
+}
+
+.about-tagline {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.about-heading {
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.about-list {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.about-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.about-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    /* keeps "2023 – 2024" on one line */
+    flex-shrink: 0;
+}
+
+.about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background-color: #212529;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.about-sub {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .project-img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-list li { flex-direction: column; gap: 0.2rem; }
+}
+
+.projects-section {
+  padding-top: 2rem;
+}

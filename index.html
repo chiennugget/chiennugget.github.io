@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playwrite+AU+SA+Guides&display=swap"
+      rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/png"
+      href="https://img.magnific.com/free-photo/great-letter-c_1232-699.jpg?semt=ais_hybrid&w=740&q=80">
+    <title>Chien's Webpage</title>
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <body>
+
+    <!--Navigation Bar-->
+    <div id="navbar"></div>
+
+    <!--Loaded pages go here-->
+    <div id="content"></div>
+
+    <!--Scripts go at the END of body-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+    <script>
+      // Load the navbar
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById("navbar").innerHTML = html;
+        });
+
+      // Load simple HTML into #content
+      function loadPage(file) {
+        fetch(file)
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById("content").innerHTML = html;
+          });
+      }
+
+      // Load a full page inside an iframe
+      function loadFrame(file) {
+        document.getElementById("content").innerHTML =
+          `<iframe src="${file}" class="page-frame"></iframe>`;
+      }
+
+      // Handle clicks on data-page and data-frame links
+      document.addEventListener("click", event => {
+        const pageLink = event.target.closest("[data-page]");
+        const frameLink = event.target.closest("[data-frame]");
+
+        if (pageLink) {
+          event.preventDefault();
+          loadPage(pageLink.dataset.page);
+        } else if (frameLink) {
+          event.preventDefault();
+          loadFrame(frameLink.dataset.frame);
+        }
+      });
+
+      // Show the homepage when the site first opens
+      loadPage("home.html");
+    </script>
+
+  </body>
+
+</html>
